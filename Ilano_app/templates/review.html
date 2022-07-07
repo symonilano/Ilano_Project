@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Reviews{% endblock %}
+
+{% block content %}
+
+<h1>Reviews and Feedbacks</h1>
+
+{% for x in review %}
+<a href="/review/{{x.id}}">{{ x.Customer_id }}</a><br>
+{% endfor %}
+
+<hr>
+<a href="{% url 'add-review' %}" class="btn btn-light" style="background-color:#C6878F; border:0px">Submit feedback</a>
+{% endblock %}

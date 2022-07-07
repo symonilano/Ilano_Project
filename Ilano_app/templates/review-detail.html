@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Reviews{% endblock %}
+
+{% block content %}
+
+<h3>Customer</h3>
+{{ review.Customer_id }}
+<br>  
+<h3>Product</h3> 
+{{ review.Product_id }}
+<h3>Rating</h3>
+{{ review.Review_Rating }}
+<h3>Comment</h3>
+{{ review.Review_Comment }}
+<h3>Suggestion</h3>
+{{ review.Review_Suggestion }}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} Customers {% endblock %}
+
+{% block content %}
+ <h1>Seller Page</h1>
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Address</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Packagetype</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in seller %}
+    <tr>
+      <td>{{x.Seller_Name }}</td>
+      <td>{{x.Seller_Contact }}</td>
+      <td>{{x.Address }}</td>
+      <td>{{x.Gender }}</td>
+      <td>{{x.CustomerPackageType }}</td>
+      <td><a href="{% url 'update-seller' x.id %}" class="btn btn-light"style="background-color:#C6878F; border:0px">Update</a></td>
+      <td><a href="{% url 'delete-seller' x.id %}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table> 
+
+<a href="{% url 'add-seller' %}" class="btn btn-light" style="background-color:#C6878F; border:0px">New Seller</a>
+{% endblock %}
